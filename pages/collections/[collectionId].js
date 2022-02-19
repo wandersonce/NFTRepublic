@@ -8,7 +8,6 @@ const Collection = () => {
   console.log(router.query.collectionId)
   return (
     <Link href="/">
-      {' '}
       <h2>{router.query.collectionId}</h2>
     </Link>
   )

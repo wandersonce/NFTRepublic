@@ -6,15 +6,15 @@ const style = {
   contentWrapper: `flex h-screen relative justify-center flex-wrap items-center`,
   copyContainer: `w-1/2`,
   title: `relative text-white text-[46px] font-semibold`,
-  description: `text-[#8a939b] container-[400px] text-2xl mt-[0.8rem] mb-[2.5rem]`,
+  description: `text-[#ffff] container-[400px] text-2xl mt-[0.8rem] mb-[2.5rem]`,
   ctaContainer: `flex`,
-  accentedButton: ` relative text-lg font-semibold px-12 py-4 bg-[#2181e2] rounded-lg mr-5 text-white hover:bg-[#42a0ff] cursor-pointer`,
-  button: ` relative text-lg font-semibold px-12 py-4 bg-[#363840] rounded-lg mr-5 text-[#e4e8ea] hover:bg-[#4c505c] cursor-pointer`,
+  accentedButton: ` relative text-lg font-semibold px-12 py-4 bg-[#110d0e] rounded-lg mr-5 text-white hover:bg-[#8a939b] cursor-pointer`,
+  button: ` relative text-lg font-semibold px-12 py-4 bg-[#673D4D] rounded-lg mr-5 text-[#e4e8ea] hover:bg-[#a06987] cursor-pointer`,
   cardContainer: `rounded-[3rem]`,
-  infoContainer: `h-20 bg-[#313338] p-4 rounded-b-lg flex items-center text-white`,
+  infoContainer: `h-20 bg-[#673D4D] p-4 rounded-b-lg flex items-center text-white`,
   author: `flex flex-col justify-center ml-4`,
   name: ``,
-  infoIcon: `flex justify-end items-center flex-1 text-[#8a939b] text-3xl font-bold`,
+  infoIcon: `flex justify-end items-center flex-1 text-[#fff] text-3xl font-bold`,
 }
 
 function Hero() {

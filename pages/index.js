@@ -68,6 +68,6 @@ export default function Home() {
   )
 }
 
-//stoped 1:01
+//stoped 1:42
 //yarn dev
 // sanity start

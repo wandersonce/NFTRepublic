@@ -40,8 +40,6 @@ const Collection = () => {
   const [nfts, setNfts] = useState([])
   const [listings, setListings] = useState([])
 
-  //
-
   const nftModule = useMemo(() => {
     if (!provider) return
 

@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useMemo } from 'react'
 import { useRouter } from 'next/router'
-import Link from 'next/link'
 import { useWeb3 } from '@3rdweb/hooks'
 import { client } from '../../lib/sanityClient'
 import { ThirdwebSDK } from '@3rdweb/sdk'
@@ -41,33 +40,32 @@ const Collection = () => {
   const [listings, setListings] = useState([])
 
   const nftModule = useMemo(() => {
-    if (!provider) return
+    if (!provider) return console.log('nftModule')
 
     const sdk = new ThirdwebSDK(
       provider.getSigner(),
-      'https://eth-rinkeby.alchemyapi.io/v2/59tde_f2ifKSk2CFmHe_sJmEioVRvCQf'
+      'https://eth-rinkeby.alchemyapi.io/v2/Dbw81eoqk_t-DkaJU9XIgytyseKVpj4A'
     )
+
     return sdk.getNFTModule(collectionId)
   }, [provider])
 
   // get all NFTs in the collection
   useEffect(() => {
-    if (!nftModule) return
+    if (!nftModule) return console.log('hereNft')
     ;(async () => {
       const nfts = await nftModule.getAll()
-
       setNfts(nfts)
     })()
   }, [nftModule])
 
   const marketPlaceModule = useMemo(() => {
-    if (!provider) return
+    if (!provider) return console.log('marketModule')
 
     const sdk = new ThirdwebSDK(
       provider.getSigner(), //alchemy Key
-      'https://eth-rinkeby.alchemyapi.io/v2/59tde_f2ifKSk2CFmHe_sJmEioVRvCQf'
+      'https://eth-rinkeby.alchemyapi.io/v2/Dbw81eoqk_t-DkaJU9XIgytyseKVpj4A'
     )
-
     //marketplace wallet from thirweb website
     return sdk.getMarketplaceModule(
       '0x09045251f5D9F9edCFa9579DA1C1073AAEBeF37f'
@@ -76,7 +74,7 @@ const Collection = () => {
 
   // get all listings in the collection
   useEffect(() => {
-    if (!marketPlaceModule) return
+    if (!marketPlaceModule) return console.log('here')
     ;(async () => {
       setListings(await marketPlaceModule.getAllListings())
     })()
@@ -96,7 +94,6 @@ const Collection = () => {
     }`
 
     const collectionData = await sanityClient.fetch(query)
-
     console.log(collectionData, '🔥')
 
     // the query returns 1 object inside of an array

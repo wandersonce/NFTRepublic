@@ -8,8 +8,8 @@ import toast, { Toaster } from 'react-hot-toast'
 const style = {
   wrapper: ``,
   walletConnectWrapper: `flex flex-col justify-center items-center h-screen w-screen bg-[#3b3d42] `,
-  button: `border border-[#282b2f] bg-[#673D4D] p-[0.8rem] text-xl text-[#fff] font-semibold rounded-lg cursor-pointer text-black`,
-  details: `text-lg text-center text=[#fff] font-semibold mt-4`,
+  button: `border border-[#282b2f] bg-[#2081e2] p-[0.8rem] text-xl font-semibold rounded-lg cursor-pointer text-black`,
+  details: `text-lg text-center text=[#282b2f] font-semibold mt-4`,
 }
 
 export default function Home() {
@@ -17,7 +17,7 @@ export default function Home() {
 
   const welcomeUser = (userName, toastHandler = toast) => {
     toastHandler.success(
-      `Welcome back ${userName != 'Unnamed' ? `${username}` : ''}!`,
+      `Welcome back${userName !== 'Unnamed' ? ` ${userName}` : ''}!`,
       {
         style: {
           background: '#04111d',
@@ -38,6 +38,7 @@ export default function Home() {
       }
 
       const result = await client.createIfNotExists(userDoc)
+
       welcomeUser(result.userName)
     })()
   }, [address])
@@ -59,8 +60,8 @@ export default function Home() {
             Connect Wallet
           </button>
           <div className={style.details}>
-            You need Chrome to be <br />
-            able to run this app.
+            You need Chrome to be
+            <br /> able to run this app.
           </div>
         </div>
       )}
@@ -68,6 +69,6 @@ export default function Home() {
   )
 }
 
-//stoped 1:42
+//stoped 1:46
 //yarn dev
 // sanity start

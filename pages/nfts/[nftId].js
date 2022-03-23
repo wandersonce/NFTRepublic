@@ -4,7 +4,7 @@ import { useWeb3 } from '@3rdweb/hooks'
 import { ThirdwebSDK } from '@3rdweb/sdk'
 import { useRouter } from 'next/router'
 import NFTImage from '../../components/nft/NFTImage'
-// import GeneralDetails from '../../components/nft/GeneralDetails'
+import GeneralDetails from '../../components/nft/GeneralDetails'
 // import ItemActivity from '../../components/nft/ItemActivity'
 // import Purchase from '../../components/nft/Purchase'
 
@@ -73,8 +73,8 @@ const Nft = () => {
               <NFTImage selectedNft={selectedNft} />
             </div>
             <div className={style.detailsContainer}>
-              {/* <GeneralDetails selectedNft={selectedNft} />
-              <Purchase
+              <GeneralDetails selectedNft={selectedNft} />
+              {/* <Purchase
                 isListed={router.query.isListed}
                 selectedNft={selectedNft}
                 listings={listings}
